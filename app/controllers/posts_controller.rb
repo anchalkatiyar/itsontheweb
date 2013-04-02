@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 	def index
 		
 =begin
+These are the files added when gmaps4rails gem is installed
 D:\rails_demo_app\ROR_TEST\Blog_test\blog>rails g gmaps4rails:install
         SECURITY WARNING: No secret option provided to Rack::Session::Cookie.
         This poses a security threat. It is strongly recommended that you
