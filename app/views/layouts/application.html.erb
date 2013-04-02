@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'gmaps4rails' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<div id="container">
+
+  <div id="header">
+      <%= link_to 'Blog by Anchal' , root_path %>
+  </div> <!-- end header -->
+  
+  
+  <div id="nav">
+    <ul>
+        <li>
+          <%= link_to 'Home' , root_path %>          
+        </li>
+        <li>
+          <%= link_to 'Admin' , {:controller=>'admin/posts',:action=>'index'} %>
+        </li>
+        <li>
+          <%= link_to 'Add a New Post' , new_post_path ,:class=>"button-how"%>
+        </li>
+        <li>
+          <%= link_to 'Display Queries' ,  :action => "test_queries" %>
+        </li>
+
+    </ul>
+  </div>  <!-- end nav div -->
+  
+  
+  <div id="content">
+
+      <% flash.each do |key,value| %>
+        <p id="message"><%= value%></p>
+      <% end %>
+
+      <%= yield  %>
+  </div> <!-- end content div -->
+
+  <div id="footer">
+      &copy; Blog by Anchal <%= Date.today.year %><%= yield :scripts %>
+  </div><!-- end footer -->
+  
+  
+</div><!-- end container div -->
+</body>
+</html>

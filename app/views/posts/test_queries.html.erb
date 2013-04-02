@@ -1,0 +1,46 @@
+   This page is to test the queries....
+ <%= stylesheet_link_tag  "test" %>
+
+<%=  ::Rails.root%>
+<br/>
+<h1>Displaying only first post Title: <%#=  @first_post.title%><br/></h1>
+
+Displaying only second post Title: <%#=  @second_post.title%><br/>
+
+ Third Post :<%# @third_post.each do |post|%>
+							<%#= post.title%>
+					      <%# end %>  			
+<br/>
+<br/>
+<br/>
+
+Displaying All Posts: 
+		<table style="border:1px solid #A292FF; background: none repeat scroll 0 0 #1B1B24;color: #A292FF;">
+		<% @posts.each do |post|%>
+			<tr  style="border:10px solid #ffffff;">
+				<td>Post Id:  <%= link_to post.id, post %></td>
+				<td>Title: </td> <td><%= link_to post.title, post %> </td> 
+				<td>Content: </td> <td><%= post.content%></td>
+				<td><%= link_to 'Edit Post', edit_post_path(post) %> |</td>
+				<td><%= link_to 'Delete Post', post , :confirm=>"Are you Sure you want to delete #{post.title}?" ,:method=> :delete %></td>
+			</tr>
+					
+			<tr>
+				
+			</tr>
+		<% end %>	
+	      </table>
+	       
+<p><%= link_to 'Add a New Post' , new_post_path ,:class=>"button-how"%></p>
+<p><%= link_to 'Back to Post list' , posts_path ,:class=>"button-how"%></p>
+
+
+Selected Column :
+
+<%# @selected_column.each do |s|%>
+	ID: <%#= s.id%> <br/>
+	Title: <%#= s.title%><br/>
+	Created At: <%#= s.created_at%><br/>
+	Updated At: <%#= s.updated_at%><br/>
+	
+<%# end %>

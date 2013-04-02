@@ -1,0 +1,15 @@
+<h1>Hiii
+	<% @third_post.each do |post|%>
+		<%= post.title%>
+	<% end %>  
+</h1>	
+	<hr/>
+	<% @rd.each do |three| %>
+		ID: <%= three.id %>
+		Title:<%= three.title %>
+	<% end %>
+
+
+<hr/>
+
+<%= @like_query %>

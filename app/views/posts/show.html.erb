@@ -1,0 +1,21 @@
+<% flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+
+
+<p><h1>Displaying Post:</h1>
+		<table border="1">
+		
+			<tr>
+				<td>Title: </td> <td><%= @post.title%> <hr/></td> 
+			</tr>
+				
+			<tr>
+				<td>Content: </td> <td><%= @post.content%><hr/></td>
+				
+			</tr>
+			<tr>
+				<td><small>Created At:</td> <td style="padding-left:2px;"><%=  @post.created_at%></small><hr/></td>
+			</tr>
+	      </table>
+	       <td><%= link_to 'Back to Post List', posts_path %> 
+</p>

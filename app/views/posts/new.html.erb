@@ -1,0 +1,11 @@
+<h1> Add a New Post</h1>
+
+<%= form_for @post do |f| %>
+<table>
+	<tr><td> <%= f.label :title %></td><td><%= f.text_field :title ,:id=>"new_title"%> </td></tr>
+	<tr><td> <%= f.label :content %></td><td><%= f.text_area :content,:id=>"new_content"%> </td></tr>
+	<tr><td></td><td><%= f.submit "Add a New Post" %> </td></tr>
+</table>
+<% end %>
+
+  <td><%= link_to 'Back to Post List', posts_path %> 
